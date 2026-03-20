@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JobSearch Executive Builder</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        margin: 24px;
+        color: #0f172a;
+        background: #ffffff;
+      }
+      textarea {
+        width: 100%;
+        min-height: 220px;
+        resize: vertical;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        padding: 12px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+      }
+      select {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+      }
+      button {
+        margin-top: 12px;
+        padding: 10px 14px;
+        border: 1px solid #111827;
+        border-radius: 8px;
+        background: #111827;
+        color: white;
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      @media (min-width: 980px) {
+        .grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .card {
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 14px;
+      }
+      .card h3 {
+        margin: 0 0 10px 0;
+      }
+      pre {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 12px;
+        white-space: pre-wrap;
+        word-break: break-word;
+        overflow: auto;
+        max-height: 420px;
+      }
+      .muted {
+        color: #64748b;
+        font-size: 12px;
+      }
+      .status {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #0ea5e9;
+      }
+      .error {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #ef4444;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JobSearch Executive Builder</h1>
+    <div class="muted">Local FastAPI server + Gemini model. Paste text or provide a URL.</div>
+
+    <div class="grid" style="margin-top: 16px;">
+      <div class="card">
+        <h3>Input</h3>
+
+        <label class="muted" for="variant">Executive variant</label>
+        <select id="variant">
+          <option value="CPTO" selected>CPTO Variant</option>
+          <option value="CTO">CTO Variant</option>
+          <option value="CPO">CPO Variant</option>
+        </select>
+
+        <div style="margin-top: 12px;">
+          <label class="muted" for="jdText">Job description text (optional if URL provided)</label>
+          <textarea id="jdText" placeholder="Paste the job description here..."></textarea>
+        </div>
+
+        <div style="margin-top: 12px;">
+          <label class="muted" for="jdUrl">Job description URL (optional if text provided)</label>
+          <input id="jdUrl" type="text" placeholder="https://example.com/job-posting" />
+        </div>
+
+        <button id="generateBtn" type="button">Generate Resume + LinkedIn</button>
+        <div id="status" class="status"></div>
+        <div id="error" class="error"></div>
+      </div>
+
+      <div class="card">
+        <h3>Output</h3>
+        <div class="muted">Markdown drafts and an audit report.</div>
+
+        <label class="muted" style="display:block;margin-top:12px;">Quality report</label>
+        <pre id="qualityPre">{}</pre>
+
+        <label class="muted" style="display:block;margin-top:12px;">Executive Resume (markdown)</label>
+        <pre id="resumePre"></pre>
+
+        <label class="muted" style="display:block;margin-top:12px;">LinkedIn Draft (markdown)</label>
+        <pre id="linkedinPre"></pre>
+      </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
