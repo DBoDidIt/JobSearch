@@ -295,7 +295,8 @@ def generate_resume_and_linkedin(
     master_resume = _read_text(root / "resumes" / "MasterResume.md")
     variant_strategy_doc = _resolve_variant_docx_text(variant=variant)
 
-    model = os.environ.get("GEMINI_MODEL", "gemini-1.5-flash")
+    # google-genai SDK model naming is API-specific. These are the names shown by `client.models.list()`.
+    model = os.environ.get("GEMINI_MODEL", "gemini-flash-latest")
 
     requirements = generate_json(
         schema=RequirementsMap,

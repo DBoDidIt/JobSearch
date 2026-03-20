@@ -1,0 +1,99 @@
+DEMETRIUS AUSTIN
+Veteran | Microsoft Alum | PE Technology and Product Operator | CPTO
+Aurora, CO 80016
+E: demetrius@backbead.com | M: +1 303.638.8609 | https://linkedin.com/in/demetriusaustin
+
+SUMMARY:
+Microsoft Alum and patent-holding technology executive with a definitive track record of transforming R&D organizations into primary growth engines for PE-backed and high-growth SaaS enterprises. Architect of investment-ready platform strategies that have expanded TAM by 75k+ companies, accelerated $4M+ in stalled revenue, and optimized global engineering economics to yield a 66% reduction in costs.
+
+KEY VALUE PILLARS:
+Revenue Acceleration: Drove a 22-point increase in NRR and GRR through ecosystem integrations and platform stability.
+Intelligence Assets: Transformed fragmented data into structured knowledge graphs, securing a 55% increase in Average Selling Price (ASP).
+M&A Strategy: Engineered standardized architectures that enabled seamless M&A integrations, validated as a technical value driver through rigorous due diligence.
+
+EXPERIENCE:
+
+RED ROCKS CREDIT UNION
+Board Member | Audit and Risk Committee 2025 to Present
+Institutionalizing and modernizing the risk management and strategic technology approach of the credit union. Providing board-level oversight on Security by Design, cybersecurity posture, AI governance and operational resilience.
+
+ARCORO (PSG PORTFOLIO COMPANY)
+SVP Engineering and Product 2021 to 2025
+Engineering Economics and Margin Expansion: Rationalized the R&D footprint, including contract and offshore resources, optimizing margins through a 66% reduction in costs.
+Organizational Velocity: Increased delivery velocity by as much as 200% through the introduction of the Technical Product Manager discipline, boosting discovery throughput using GenAI.
+Strategic Revenue Recovery: Institutionalized a proprietary, domain-driven design (DDD) framework that unlocked $4M+ in stalled revenue and bypassed legacy technical debt.
+Platform and TAM Expansion: Spearheaded the ecosystem strategy and championed the shift to a cloud-native framework featuring microservices and API-driven interoperability, expanding TAM by ~75k companies. This initiative fueled 90%+ revenue growth and a 22-point increase in NRR/GRR.
+Intelligence Assets: Engineered a Domain-Driven data architecture that transformed fragmented datasets into a structured knowledge-graph for predictive analytics and AI scaling.
+M&A Integration Strategy: Engineered a standardized architecture that enabled "plug-and-play" M&A and partner ecosystem integrations, validated as a technical value driver through rigorous due diligence.
+Business Monetization: Commercialized the platform integrations roadmap, fueling 90%+ revenue growth (Tenure) and a 55% increase in Average Selling Price (ASP).
+Time-to-Value Acceleration: Slashed customer ROI timeframes from 12 months to <90 days by transforming the technical delivery and services model utilizing the integrations platform for data acquisition.
+
+TABULA RASA HEALTHCARE
+Technical Advisory Board Member | 2020 to 2022
+Recruited by the CAO and provided strategic guidance to the board of Tabula Rasa Healthcare on technical consolidation and application sunsetting following rapid-acquisition cycles. Efforts created a strategy for a unified ecosystem positioning the organization for scalable innovation, improved patient experiences, and exit-readiness.
+
+NEXGEN RESOURCES CORPORATION
+Head of Technology / Partner 2018 to 2021
+Value Creation: Professionalized technology stacks of portcos, directly contributing to the technical stability required for ultimate acquisition.
+Fiduciary Oversight: Institutionalized Security by Design and enterprise-grade security protocols across the portfolio and remediated critical vulnerabilities in a Fintech portco's infrastructure to ensure bankability for a $500M facility.
+Capital Efficiency: Reduced enterprise technology costs across the family office and its subsidiaries by centralizing infrastructure and leveraging scale in vendor negotiations and managed service contracts.
+
+DATUMVIEW (STRATEGIC ADVISORY)
+Founder and Principal Consultant 2010 to 2018
+Front-Office Strategic Pivot: Built a high-authority advisory brand that led to a successful conversion from consultant to Partner at NexGen Resources, moving into the front-office to manage a diverse technology investment portfolio.
+ROI-Driven Transformation: Delivered measurable equity value for a diverse client portfolio by professionalizing R&D operations, stabilizing legacy systems, and managing multi-million dollar capital investments in core enterprise technology.
+Cross-Sector Value Creation: Identified and captured technology-led revenue streams across Beverage, O&G, and Construction, leveraging a repeatable playbook for technical due diligence.
+Strategic Networking: Established a "Trusted Advisor" status with family offices and high-growth startups, bridging the gap between institutional capital and technical innovation.
+
+ELEVATEPOINT
+VP of Product and Services 2012 to 2014
+Bootstrapping Excellence: Leveraged a "Service-Led Growth" model to fund internal product R&D, utilizing high-value consulting engagements as a testing ground for core software features.
+Customer Success Architecture: Designed the Customer Success function from scratch, implementing data-driven success metrics and reporting to stabilize early-stage enterprise accounts and reduce churn.
+Microsoft Ecosystem Influence: Leveraged "Alum-Network" insights to anticipate platform shifts, positioning the startup to capitalize on emerging enterprise communication trends before market saturation.
+
+BIZNET SOFTWARE
+Vice President | Engineering and Product 2008 to 2010
+Operational Turnaround: Professionalized a localized "Single-Product" shop into a multi-platform, partner-ready software organization, significantly increasing the company's valuation for eventual acquisition.
+Fiduciary Crisis Management: Partnered with the CEO to execute a strategic organizational downsizing during the 2008 global financial crisis, preserving capital while maintaining the core innovation engine.
+Efficiency Engineering: Exponentially increased R&D throughput through process automation and lean governance, delivering a 7x increase in integration volume without increasing department spend.
+Strategic Investment: Maintained a long-term equity stake post-tenure, providing ongoing advisory that supported the company's ultimate successful exit.
+
+MICROSOFT CORPORATION
+Sr. Group Program Manager | Principal Program Manager 2001 to 2008
+Organizational Mentorship: Managed and transitioned a team of 7 Product Managers into the Microsoft Program Management model, standardizing product lifecycle processes for an acquired entity (FRx Software) within a Fortune 50 environment.
+Acquisition Stewardship: Played a key role in the integration of the MDM acquisition, serving as the "bridge" between the acquired engineering team and the broader SQL Server organizational standards.
+Influence-Based Leadership: Navigated the matrixed Redmond environment to align product dependencies across SQL and MBS, ensuring the FRx portfolio maintained its autonomous value while contributing to core platform goals.
+Executive-Appointed Leadership: Hand-selected by the President of Microsoft Business Solutions (Doug Burgum) to lead the Diversity and Inclusion Committee; elected Chairman by peers to drive enterprise-wide recruiting strategies and address localized hiring biases.
+Microsoft Leader of the Year: Nominated by divisional leadership and awarded top honors for exceptional cross-functional networking and delivering high-velocity innovation (3 releases in 24 months) within a matrixed Fortune 50 environment.
+
+GREAT PLAINS SOFTWARE (ACQUIRED BY MICROSOFT)
+Software Engineering Manager | Operational Integration Lead 2000 to 2001
+Acquisition Execution: Served as a key operational partner in the post-acquisition integration (PMI), executing the "Day 1 to Day 100" plan to professionalize engineering processes and reporting standards.
+Risk Mitigation: Acted as a stabilizing force during the transition, preventing technical debt and operational drift that often occur during mid-market M&A events.
+Governance Alignment: Implemented new operational protocols to align the decentralized R&D teams with Great Plains' broader corporate governance and fiscal reporting requirements.
+
+FRX SOFTWARE (ACQUIRED BY GREAT PLAINS / MICROSOFT)
+Sr. Manager, Development and Test Engineering - Data Integration Services 1998 to 2001
+Exit Readiness: Architected a high-performance integration framework that drove the strategic acquisition of FRx by Great Plains Software due to its unmatched ecosystem interoperability.
+Margin Expansion: Replaced manual, high-cost testing and delivery processes with 90% automation, allowing the organization to scale from 22 to 33 partners without a linear increase in engineering headcount.
+Revenue Acceleration: Collapsed the "Build-to-Ship" cycle by 300%, unblocking Sales Operations and accelerating the cash-conversion cycle through faster physical distribution to customers.
+Domain Strategy: Led the 0-to-1 redesign of the integrations engine, shifting the company from a "Single-Product" utility to an "Extensible Framework" capable of supporting multiple business domains.
+Cross-Functional Governance: Served as the technical architect for the Partner Sales organization, vetting the technical maturity and scalability of potential acquisitions and partnerships.
+
+BOARD ADVISORY, GOVERNANCE, AND RISK MANAGEMENT:
+Red Rocks Credit Union 2025 to Present
+Board Member
+Audit and Risk Committee Member
+Tabula Rasa Healthcare 2020 to 2022
+Member - Technical Advisory Board
+Proceed Finance 2020 to 2021
+Chairman - Cybersecurity and Technology Committee
+Children's Diabetes Foundation 2020 to 2022
+Technology Advisor
+Society of Information Managers (Denver) 2008 to 2009
+Board Member
+
+EDUCATION:
+Bachelor of Science - Organizational Management
+Colorado Christian University 1997
+Lakewood, CO

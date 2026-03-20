@@ -1,0 +1,34 @@
+{
+  "overall_score_percent": 94,
+  "categories": [
+    {
+      "category": "Cloud Native Engineering",
+      "score_percent": 90,
+      "missing_items": [
+        "Specific cloud native stack details"
+      ]
+    },
+    {
+      "category": "Security and Governance",
+      "score_percent": 80,
+      "missing_items": [
+        "Explicit Security by Design methodology"
+      ]
+    },
+    {
+      "category": "Delivery Velocity",
+      "score_percent": 100,
+      "missing_items": []
+    },
+    {
+      "category": "Financial Performance",
+      "score_percent": 100,
+      "missing_items": []
+    },
+    {
+      "category": "Executive Leadership",
+      "score_percent": 100,
+      "missing_items": []
+    }
+  ]
+}

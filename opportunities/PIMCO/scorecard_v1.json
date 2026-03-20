@@ -1,0 +1,21 @@
+{
+  "overall_score_percent": 78,
+  "categories": [
+    {
+      "category": "Domain Expertise",
+      "score_percent": 65,
+      "missing_items": [
+        "Specific Asset Management reporting domain",
+        "Portfolio analytics and attribution"
+      ]
+    },
+    {
+      "category": "Product Leadership",
+      "score_percent": 90,
+      "missing_items": [
+        "Direct client reporting platform vision",
+        "Reporting lifecycle automation experience"
+      ]
+    }
+  ]
+}

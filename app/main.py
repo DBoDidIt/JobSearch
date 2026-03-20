@@ -6,7 +6,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from app.models import GenerateRequest, GenerateResponse, ScrapeRequest, ScrapeResponse
-from app.pipeline import generate_resume_and_linkedin
+from app.workflow import generate_scorecard_and_rewrite
 from app.scrape import scrape_job_description
 
 
@@ -43,7 +43,10 @@ def scrape(req: ScrapeRequest) -> ScrapeResponse:
 @app.post("/api/generate")
 def generate(req: GenerateRequest) -> Dict[str, Any]:
     if not req.job_description_text and not req.job_description_url:
-        raise HTTPException(status_code=400, detail="Provide job_description_text or job_description_url.")
+        raise HTTPException(
+            status_code=400,
+            detail="Missing Information: Either Job Description or Job Description URL is required.",
+        )
 
     job_text: Optional[str] = req.job_description_text
     warnings: List[str] = []
@@ -60,22 +63,27 @@ def generate(req: GenerateRequest) -> Dict[str, Any]:
         raise HTTPException(status_code=400, detail="Job description text is empty after scraping/truncation.")
 
     try:
-        result = generate_resume_and_linkedin(
+        result = generate_scorecard_and_rewrite(
             variant=req.variant,
             job_description_text=job_text,
+            company_name=req.company_name,
             max_input_chars=req.max_input_chars,
         )
     except RuntimeError as e:
         # GeminI client setup failures (for example, missing GEMINI_API_KEY).
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        msg = str(e)
+        if "RESOURCE_EXHAUSTED" in msg or "429" in msg:
+            raise HTTPException(
+                status_code=429,
+                detail="Gemini quota exceeded (RESOURCE_EXHAUSTED). Wait for quota reset or use a different API key/plan.",
+            )
+        raise HTTPException(status_code=500, detail=msg)
 
     # Keep the HTTP response shape stable for the UI.
     return {
-        "resume_md": result["resume_md"],
-        "linkedin_md": result["linkedin_md"],
-        "quality_report": result["quality_report"],
-        "warnings": warnings,
+        "scorecard": result["scorecard"],
+        "warnings": warnings + result.get("warnings", []),
     }
 
