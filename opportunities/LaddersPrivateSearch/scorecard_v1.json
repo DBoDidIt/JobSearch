@@ -1,0 +1,21 @@
+{
+  "overall_score_percent": 88,
+  "categories": [
+    {
+      "category": "Product Strategy and Innovation",
+      "score_percent": 85,
+      "missing_items": [
+        "Direct AI-native product development",
+        "Leading global product management teams"
+      ]
+    },
+    {
+      "category": "Technical Qualifications",
+      "score_percent": 90,
+      "missing_items": [
+        "AI/ML-enabled product capabilities",
+        "Product analytics platform experience"
+      ]
+    }
+  ]
+}

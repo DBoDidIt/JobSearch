@@ -1,0 +1,21 @@
+{
+  "overall_score_percent": 62,
+  "categories": [
+    {
+      "category": "Defense and Compliance Expertise",
+      "score_percent": 35,
+      "missing_items": [
+        "CMMC, NIST 800.171, and ATO compliance",
+        "Direct DoD or Defense Industrial Base exp"
+      ]
+    },
+    {
+      "category": "Manufacturing Product Management",
+      "score_percent": 50,
+      "missing_items": [
+        "MES, CMMS, or EAM software experience",
+        "Air.gapped and SCIF deployment strategies"
+      ]
+    }
+  ]
+}

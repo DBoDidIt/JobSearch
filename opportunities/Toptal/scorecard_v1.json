@@ -1,0 +1,21 @@
+{
+  "overall_score_percent": 78,
+  "categories": [
+    {
+      "category": "P&L and Business Management",
+      "score_percent": 75,
+      "missing_items": [
+        "Explicit 3+ years of full P&L ownership",
+        "Master's degree in Engineering"
+      ]
+    },
+    {
+      "category": "Commercial Growth",
+      "score_percent": 82,
+      "missing_items": [
+        "Top tier management consulting experience",
+        "End to end new business line ownership"
+      ]
+    }
+  ]
+}

@@ -67,6 +67,7 @@ def generate(req: GenerateRequest) -> Dict[str, Any]:
             variant=req.variant,
             job_description_text=job_text,
             company_name=req.company_name,
+            company_url=req.company_url,
             max_input_chars=req.max_input_chars,
         )
     except RuntimeError as e:
@@ -84,6 +85,7 @@ def generate(req: GenerateRequest) -> Dict[str, Any]:
     # Keep the HTTP response shape stable for the UI.
     return {
         "scorecard": result["scorecard"],
+        "company_research": result.get("company_research"),
         "warnings": warnings + result.get("warnings", []),
     }
 

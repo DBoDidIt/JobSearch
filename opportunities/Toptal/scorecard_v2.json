@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "company_name": "Toptal",
+    "company_url": "https://toptal.com"
+  },
+  "scorecard": {
+    "overall_score_percent": 73,
+    "categories": [
+      {
+        "category": "Commercial and P&L Ownership",
+        "score_percent": 75,
+        "missing_items": [
+          "Direct P&L ownership of a business unit",
+          "Management consulting or IB experience"
+        ]
+      },
+      {
+        "category": "Professional Services and GTM",
+        "score_percent": 70,
+        "missing_items": [
+          "Professional services growth experience",
+          "Marketing technology and CRM familiarity"
+        ]
+      }
+    ]
+  }
+}

@@ -6,9 +6,10 @@ from typing import Any, Dict, List, Optional
 
 from docx import Document
 from pydantic import BaseModel
+from app.scrape import scrape_url_text
 
 from app.gemini_client import generate_json
-from app.models import Scorecard
+from app.models import CompanyResearch, Scorecard
 
 
 class ScoreOnlyOutput(BaseModel):
@@ -145,13 +146,82 @@ Hard constraints:
 """.strip()
 
 
+def _company_research_prompt(
+    *,
+    company_url: str,
+    company_name: Optional[str],
+    company_page_text: str,
+) -> str:
+    name_line = company_name if company_name else "UnknownCompany"
+    return f"""
+You are a Chief of Staff researching an applicant's target company for executive interview readiness.
+
+Inputs:
+- company_name: {name_line}
+- company_url: {company_url}
+- company_page_text (scraped on-page text, may be incomplete):
+---
+{company_page_text}
+---
+
+Goal:
+Produce an executive research summary that helps the user prepare for interviews and broad prompts like:
+- "Tell us about yourself."
+- "What is the greatest impact that you had in your prior role?"
+- "What are the top 3 attributes you seek in a work environment in which you thrive?"
+
+Rules:
+- Use only the provided company_page_text for factual claims about the company.
+- If you infer details that are not directly supported by the company_page_text, prefix the statement with "Inferred:" at the start of the sentence.
+- Do not include any em-dash (—) or en-dash (–). Use commas or periods.
+- Be direct, executive tone, and human-readable.
+
+Use the user's executive background docs to ground the interview answers (do not invent new metrics):
+- v2_ExecResume_Strategy.md:
+{_read_text(_repo_root() / "v2_ExecResume_Strategy.md")[:2000]}
+- goldmaster_resumes.md:
+{_read_text(_repo_root() / "goldmaster_resumes.md")[:2000]}
+- resumes/MasterResume.md:
+{_read_text(_repo_root() / "resumes" / "MasterResume.md")[:2000]}
+""".strip()
+
+
+def generate_company_research(
+    *,
+    company_url: str,
+    company_name: Optional[str],
+    max_input_chars: int = 6000,
+) -> CompanyResearch:
+    page_text = scrape_url_text(company_url, max_chars=9000)
+    if not page_text.strip():
+        page_text = "Inferred: Unable to extract meaningful on-page text from the provided URL."
+
+    model = os.environ.get("GEMINI_MODEL", "gemini-flash-latest")
+    prompt = _company_research_prompt(
+        company_url=company_url,
+        company_name=company_name,
+        company_page_text=_truncate_text(page_text, max_input_chars),
+    )
+
+    # Keep output compact to reduce quota and avoid JSON truncation.
+    return generate_json(
+        schema=CompanyResearch,
+        prompt=prompt,
+        model=model,
+        max_output_tokens=3500,
+        temperature=0.3,
+    )
+
+
 def generate_scorecard_and_rewrite(
     *,
     variant: str,
     job_description_text: str,
     company_name: Optional[str] = None,
+    company_url: Optional[str] = None,
     max_input_chars: int = 12000,
 ) -> Dict[str, Any]:
+    warnings: List[str] = []
     jd = _truncate_text(job_description_text or "", min(max_input_chars, 8000))
 
     baseline_resume_text = _resolve_variant_docx_text(variant=variant)
@@ -187,6 +257,19 @@ def generate_scorecard_and_rewrite(
             model=model,
             max_output_tokens=2500,
         )
+
+    company_research: Optional[CompanyResearch] = None
+    if company_url and company_url.strip():
+        try:
+            company_research = generate_company_research(
+                company_url=company_url,
+                company_name=company_name,
+            )
+        except Exception:
+            # Best-effort: never fail scorecard export if company research fails.
+            company_research = None
+            warnings.append("Company research unavailable (Gemini scrape or quota issue).")
+
     # Optional export: keep scorecard history by company and version.
     if company_name and company_name.strip():
         sanitized = _sanitize_company_name(company_name)
@@ -197,13 +280,39 @@ def generate_scorecard_and_rewrite(
 
             version = _next_export_version(company_folder=company_folder)
             scorecard_filename = f"scorecard_v{version}.json"
+            company_research_filename = f"company_research_v{version}.json"
             (company_folder / scorecard_filename).write_text(
-                json.dumps(score_only.scorecard.model_dump(), indent=2),
+                json.dumps(
+                    {
+                        "metadata": {
+                            "company_name": company_name,
+                            "company_url": company_url,
+                        },
+                        "scorecard": score_only.scorecard.model_dump(),
+                    },
+                    indent=2,
+                ),
                 encoding="utf-8",
             )
 
+            if company_research is not None:
+                (company_folder / company_research_filename).write_text(
+                    json.dumps(
+                        {
+                            "metadata": {
+                                "company_name": company_name,
+                                "company_url": company_url,
+                            },
+                            "company_research": company_research.model_dump(),
+                        },
+                        indent=2,
+                    ),
+                    encoding="utf-8",
+                )
+
     return {
         "scorecard": score_only.scorecard,
-        "warnings": [],
+        "company_research": company_research,
+        "warnings": warnings,
     }
 

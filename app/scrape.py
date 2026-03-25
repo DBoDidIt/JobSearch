@@ -29,6 +29,14 @@ def scrape_job_description(url: str, *, timeout_seconds: int = 15, max_chars: in
     return cleaned[:max_chars]
 
 
+def scrape_url_text(url: str, *, timeout_seconds: int = 15, max_chars: int = 12000) -> str:
+    """
+    Generic scraper: extracts visible text and truncates.
+    Used for company research when we only need on-page text.
+    """
+    return scrape_job_description(url, timeout_seconds=timeout_seconds, max_chars=max_chars)
+
+
 def truncate(s: Optional[str], max_chars: int) -> str:
     if not s:
         return ""

@@ -1,0 +1,21 @@
+{
+  "overall_score_percent": 78,
+  "categories": [
+    {
+      "category": "Industry and Domain Expertise",
+      "score_percent": 65,
+      "missing_items": [
+        "Specific Asset Management industry depth",
+        "Portfolio analytics and attribution focus"
+      ]
+    },
+    {
+      "category": "Product and AI Leadership",
+      "score_percent": 88,
+      "missing_items": [
+        "Client Reporting platform vision",
+        "AI-first reporting lifecycle experience"
+      ]
+    }
+  ]
+}

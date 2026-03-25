@@ -119,8 +119,16 @@
           <input id="companyName" type="text" placeholder="ExampleCompany" />
         </div>
 
+        <div style="margin-top: 12px;">
+          <label class="muted" for="companyUrl">Company URL for the Company Applying for should be listed</label>
+          <input id="companyUrl" type="text" placeholder="https://example.com/careers" />
+        </div>
+
         <label class="muted" style="display:block;margin-top:12px;">Scorecard (JD vs selected resume variant)</label>
-        <pre id="scorecardPre">{}</pre>
+        <div id="scorecardPre" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px;">
+          <h2 style="margin:0 0 8px 0;font-size:18px;">Scorecard</h2>
+          <div class="muted">Run generation to view results.</div>
+        </div>
 
         <button id="generateBtn" type="button">Generate Scorecard</button>
         <div id="status" class="status"></div>
@@ -130,6 +138,15 @@
       <div class="card">
         <h3>Output</h3>
         <div class="muted">Scorecard-only response.</div>
+
+        <label class="muted" style="display:block;margin-top:12px;">Company Research</label>
+        <div
+          id="companyResearchPre"
+          style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px;margin-top:8px;"
+        >
+          <h2 style="margin:0 0 8px 0;font-size:16px;">Company Research</h2>
+          <div class="muted">Run generation to view results.</div>
+        </div>
       </div>
     </div>
 
@@ -140,6 +157,16 @@
           Either Job Description or Job Description URL is required.
         </div>
         <button type="button" id="missingModalClose" style="margin-top:0;">Close</button>
+      </div>
+    </div>
+
+    <div id="companyUrlModal" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.55); z-index:50; padding:18px;">
+      <div style="max-width:520px; margin:6vh auto; background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:16px;">
+        <div style="font-weight:700; margin-bottom:8px;">Missing Information</div>
+        <div id="companyUrlModalText" style="margin-bottom:14px; color:#0f172a;">
+          Company URL for the Company Applying for should be listed
+        </div>
+        <button type="button" id="companyUrlModalClose" style="margin-top:0;">Close</button>
       </div>
     </div>
 

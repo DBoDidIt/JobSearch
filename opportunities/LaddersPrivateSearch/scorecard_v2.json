@@ -1,0 +1,21 @@
+{
+  "overall_score_percent": 88,
+  "categories": [
+    {
+      "category": "Strategic Leadership",
+      "score_percent": 92,
+      "missing_items": [
+        "AI native product delivery",
+        "Global product team mentorship"
+      ]
+    },
+    {
+      "category": "Technical Domain Expertise",
+      "score_percent": 84,
+      "missing_items": [
+        "User experience design tools",
+        "Automation tool proficiency"
+      ]
+    }
+  ]
+}

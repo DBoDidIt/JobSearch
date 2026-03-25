@@ -30,6 +30,10 @@ class GenerateRequest(BaseModel):
         default=None,
         description="Company name for export. Used to create opportunities/<CompanyNameSansSpaces>/.",
     )
+    company_url: Optional[str] = Field(
+        default=None,
+        description="Company URL for the company applying for. Included in exported scorecard metadata.",
+    )
     max_input_chars: int = Field(
         default=12000,
         description="Maximum characters of job description text to send to Gemini.",
@@ -68,7 +72,20 @@ class ExportInfo(BaseModel):
     files: List[str] = Field(default_factory=list)
 
 
+class CompanyResearch(BaseModel):
+    company_name: Optional[str] = None
+    company_url: Optional[str] = None
+    executive_overview: str
+    inferred_company_priorities: List[str] = Field(default_factory=list)
+    how_executives_operate: List[str] = Field(default_factory=list)
+    tell_us_about_yourself_answer: str
+    greatest_impact_answer: str
+    top_3_attributes_for_thrive: List[str] = Field(default_factory=list)
+    scrape_notes: List[str] = Field(default_factory=list)
+
+
 class GenerateResponse(BaseModel):
     scorecard: Scorecard
+    company_research: Optional[CompanyResearch] = None
     warnings: List[str] = Field(default_factory=list)
 

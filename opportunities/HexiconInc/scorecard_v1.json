@@ -1,0 +1,21 @@
+{
+  "overall_score_percent": 82,
+  "categories": [
+    {
+      "category": "Product and Tech Strategy",
+      "score_percent": 85,
+      "missing_items": [
+        "Deep AI and ML solution architecture",
+        "Recent industrial manufacturing focus"
+      ]
+    },
+    {
+      "category": "Qualifications and Commercials",
+      "score_percent": 78,
+      "missing_items": [
+        "B.Sc. in CS or AI or ML degree",
+        "Explicit pricing and packaging ownership"
+      ]
+    }
+  ]
+}

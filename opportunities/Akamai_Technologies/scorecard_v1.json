@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "company_name": "Akamai_Technologies",
+    "company_url": "https://akamai.com"
+  },
+  "scorecard": {
+    "overall_score_percent": 87,
+    "categories": [
+      {
+        "category": "Cloud and Infrastructure Expertise",
+        "score_percent": 82,
+        "missing_items": [
+          "Deep IaaS and networking fluency",
+          "Direct SRE and operations leadership"
+        ]
+      },
+      {
+        "category": "Product Strategy and Leadership",
+        "score_percent": 92,
+        "missing_items": [
+          "External analyst representation",
+          "Managed services portfolio scaling"
+        ]
+      }
+    ]
+  }
+}
